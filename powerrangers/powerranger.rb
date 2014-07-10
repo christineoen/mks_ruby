@@ -28,7 +28,7 @@ class Person
 
 end
 
-class PowerRanger2 < Person
+class PowerRanger < Person
 
 	attr_accessor :strength
 	attr_accessor :color
@@ -95,7 +95,7 @@ end
 me = Person.new("Chris")
 me.drink_coffee(2)
 
-ranger = PowerRanger2.new("Erin", 5, 10, "blue")
+ranger = PowerRanger.new("Erin", 5, 10, "blue")
 ranger.punch(me, 6)
 ranger.punch(me, 2)
 
