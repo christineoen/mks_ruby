@@ -6,9 +6,15 @@ class Car
 		@@total_car_count
 	end
 
+	def self.cars_per_color
+		@@cars_per_color
+	end
+
 	def to_s()
 		"I'm a car! I've driven #{@distance} and have #{@fuel} gallons gas left"
 	end
+
+	attr_reader :color
 
 	def initialize(color='blue')
 		@fuel = 10
@@ -39,9 +45,23 @@ class Car
 		@fuel = 10.0
 	end
 
-	def change_color(new_color)
-		@new_color = new_color
+	# camaro = Car.new("white")
+	# camaro.change_color("blue")
+	# @color = "white"
+	# @new_color = "blue"
+	# @@cars_per_color = {
+	# 	"white" => 1,
+	# 	"blue" => 1
+	# }
+	# attr_writer :color
+
+	# def color=(color)
+	# 	@color = color
+	# end
+
+	def color=(new_color)
 		@@cars_per_color[@color] -= 1
+		@color = new_color
 		if @@cars_per_color.has_key?(new_color)
 			@@cars_per_color[new_color] += 1
 		else
